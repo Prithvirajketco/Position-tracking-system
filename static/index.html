@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS 2 | Control Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <main class="dashboard">
+        <header>
+            <div class="logo">
+                <h1>EMS 2</h1>
+                <span class="status-pill" id="system-status">IDLE</span>
+            </div>
+            <div class="header-actions">
+                <button id="btn-home" class="btn-secondary">Homing Sequence</button>
+            </div>
+        </header>
+
+        <section class="grid-layout">
+            <!-- Telemetry Card -->
+            <div class="card telemetry-card">
+                <h2>Real-time Telemetry</h2>
+                <div class="telemetry-grid">
+                    <div class="stat">
+                        <span class="label">Voltage</span>
+                        <div class="value-container">
+                            <span id="val-voltage" class="value">0.000</span><span class="unit">V</span>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Distance</span>
+                        <div class="value-container">
+                            <span id="val-distance" class="value">0.0</span><span class="unit">cm</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="limits-container">
+                    <div class="limit-indicator" id="limit-home">
+                        <div class="light"></div>
+                        <span>Home (Limit 1)</span>
+                    </div>
+                    <div class="limit-indicator" id="limit-end">
+                        <div class="light"></div>
+                        <span>End (Limit 2)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Center Card -->
+            <div class="card control-card">
+                <h2>Control Center</h2>
+                <div class="motor-controls">
+                    <button id="btn-forward" class="btn-control">
+                        <span class="icon">↑</span>
+                        <span>FORWARD</span>
+                    </button>
+                    <button id="btn-stop" class="btn-control btn-danger">
+                        <span class="icon">■</span>
+                        <span>STOP</span>
+                    </button>
+                    <button id="btn-backward" class="btn-control">
+                        <span class="icon">↓</span>
+                        <span>BACKWARD</span>
+                    </button>
+                </div>
+                <div class="mode-actions">
+                    <button id="btn-mimic" class="btn-mode">
+                        <span class="mode-label">Mode: Record & Mimic</span>
+                        <span class="mode-status">Inactive</span>
+                    </button>
+                    <button id="btn-capture" class="btn-mode btn-primary" style="display: none;">
+                        <span>CAPTURE POSITION</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mimic Info Card -->
+            <div id="card-mimic-info" class="card mimic-info-card" style="opacity: 0.5;">
+                <h2>Mimic Movement Details</h2>
+                <div class="mimic-grid">
+                    <div class="mimic-stat">
+                        <span class="label">Current (Motor)</span>
+                        <div class="value-container">
+                            <span id="mimic-current" class="value">5.0</span><span class="unit">cm</span>
+                        </div>
+                    </div>
+                    <div class="mimic-stat">
+                        <span class="label">New (Sensor)</span>
+                        <div class="value-container">
+                            <span id="mimic-new" class="value">5.0</span><span class="unit">cm</span>
+                        </div>
+                    </div>
+                    <div class="mimic-stat">
+                        <span class="label">Distance to Move</span>
+                        <div class="value-container">
+                            <span id="mimic-dist" class="value">0.0</span><span class="unit">cm</span>
+                        </div>
+                    </div>
+                    <div class="mimic-stat">
+                        <span class="label">Estimated Time</span>
+                        <div class="value-container">
+                            <span id="mimic-time" class="value">0.0</span><span class="unit">s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logs Card -->
+            <div class="card logs-card">
+                <h2>System Logs</h2>
+                <div id="log-container" class="log-terminal"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
