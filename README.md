@@ -1,9 +1,9 @@
-# Position Tracking System (EMS 2 Record & Mimic)
+# Position Tracking System (Record & Mimic)
 
 A Python-based hardware control and data acquisition system designed to record object positions using an IR sensor and mimic those movements using a motorized linear actuator (lead screw). 
 
 ## 🎯 Overview
-The **EMS 2 Record & Mimic System** allows a user to manually move an object to a new position, capture that position using an analog IR sensor, and then automatically drive a motor to mimic that exact movement distance and direction. It features both a command-line interface for direct terminal control and a rich web-based GUI via FastAPI and WebSockets.
+The **Record & Mimic System** allows a user to manually move an object to a new position, capture that position using an analog IR sensor, and then automatically drive a motor to mimic that exact movement distance and direction. It features both a command-line interface for direct terminal control and a rich web-based GUI via FastAPI and WebSockets.
 
 ## 🛠 Hardware Requirements
 - **Data Acquisition (DAQ)**: National Instruments cDAQ chassis with appropriate modules (configured for `cDAQ2`).
